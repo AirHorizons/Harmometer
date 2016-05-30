@@ -16,11 +16,13 @@ void setup(){
 
 void draw() {
   int C = setColor();
-  if (C == -1) background(247,202,201);
-  else  background((max-C)*(255)/max);
+  if (C == -1) background(247,202,201); // rose quartz is a default color
+  else  background((max-C)*(145)/max,(max-C)*(168)/max,(max-C)*(208)/max);
+  // serenity is a most 'harmonic' color
 }
 
 void keyPressed(){
+  // keyboard keys are optimized for makey-makey
   if (key == 'w')  keys[0] = true;
   if (key == 'a')  keys[1] = true;
   if (key == 's')  keys[2] = true;
