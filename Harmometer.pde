@@ -4,7 +4,7 @@ int freqlist[] = {2,31,17,11,9,7,77,5,13,8,25,23,3};
 int max=0;
 
 void setup(){
-  size(1000, 1000);
+  size(2000, 1000);
   noStroke();
   int len = freqlist.length;
   for (int i=0;i<freqlist.length;i++){
@@ -15,7 +15,9 @@ void setup(){
 }
 
 void draw() {
-  background((max-setColor())*(255)/max);
+  int C = setColor();
+  if (C == -1) background(247,202,201);
+  else  background((max-C)*(255)/max);
 }
 
 void keyPressed(){
@@ -61,7 +63,7 @@ int setColor(){
   int harmony=0;
   int len;
   int min = findRoot();
-  if (min == 13) return 0;
+  if (min == 13) return -1;
   else 
   {
     for (int i=min;i<12;i++)
